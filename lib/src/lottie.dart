@@ -15,7 +15,7 @@ import 'providers/load_image.dart';
 class Lottie extends StatefulWidget {
   Lottie({
     Key key,
-    @required this.composition,
+    required this.composition,
     this.controller,
     this.width,
     this.height,

@@ -23,7 +23,7 @@ class ShapeLayer extends BaseLayer {
 
   @override
   void drawLayer(Canvas canvas, Size size, Matrix4 parentMatrix,
-      {@required int parentAlpha}) {
+      {required int parentAlpha}) {
     _contentGroup.draw(canvas, size, parentMatrix, parentAlpha: parentAlpha);
   }
 

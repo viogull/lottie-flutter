@@ -162,7 +162,7 @@ class RectangleContent implements KeyPathElementContent, PathContent {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     if (property == LottieProperty.rectangleSize) {
       _sizeAnimation.setValueCallback(callback as LottieValueCallback<Offset>);
     } else if (property == LottieProperty.position) {

@@ -11,8 +11,8 @@ class ShapeFill implements ContentModel {
   final bool fillEnabled;
   final PathFillType fillType;
   final String name;
-  final AnimatableColorValue /*?*/ color;
-  final AnimatableIntegerValue /*?*/ opacity;
+  final AnimatableColorValue? color;
+  final AnimatableIntegerValue? opacity;
   final bool hidden;
 
   ShapeFill(

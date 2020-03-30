@@ -40,7 +40,7 @@ class Utils {
   }
 
   static void applyTrimPathContentIfNeeded(
-      Path path, TrimPathContent /*?*/ trimPath) {
+      Path path, TrimPathContent? trimPath) {
     if (trimPath == null || trimPath.hidden) {
       return;
     }

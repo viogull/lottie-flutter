@@ -49,8 +49,8 @@ class LottieComposition {
   }
 
   static Future<LottieComposition> fromBytes(Uint8List bytes,
-      {String name}) async {
-    Archive archive;
+      {String? name}) async {
+    Archive? archive;
     if (bytes[0] == 0x50 && bytes[1] == 0x4B) {
       archive = ZipDecoder().decodeBytes(bytes);
       var jsonFile = archive.files.firstWhere((e) => e.name.endsWith('.json'));
@@ -79,7 +79,7 @@ class LottieComposition {
 
   LottieComposition._(this.name);
 
-  final String name;
+  final String? name;
   final _performanceTracker = PerformanceTracker();
   // This is stored as a set to avoid duplicates.
   final _warnings = <String>{};
@@ -106,7 +106,7 @@ class LottieComposition {
   int _maskAndMatteCount = 0;
 
   void addWarning(String warning) {
-    var prefix = name != null && name.isNotEmpty ? '$name: ' : '';
+    var prefix = name != null && name!.isNotEmpty ? '$name: ' : '';
     logger.warning('$prefix$warning');
     _warnings.add(warning);
   }
@@ -145,7 +145,7 @@ class LottieComposition {
 
   List<Layer> get layers => _layers;
 
-  List<Layer> /*?*/ getPrecomps(String id) {
+  List<Layer>? getPrecomps(String id) {
     return _precomps[id];
   }
 
@@ -155,7 +155,7 @@ class LottieComposition {
 
   List<Marker> get markers => _markers;
 
-  Marker /*?*/ getMarker(String markerName) {
+  Marker? getMarker(String markerName) {
     for (var i = 0; i < _markers.length; i++) {
       var marker = _markers[i];
       if (marker.matchesName(markerName)) {

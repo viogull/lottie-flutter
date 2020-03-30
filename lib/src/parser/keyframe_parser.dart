@@ -41,8 +41,8 @@ class KeyframeParser {
     Curve interpolator;
 
     // Only used by PathKeyframe
-    Offset pathCp1;
-    Offset pathCp2;
+    Offset? pathCp1;
+    Offset? pathCp2;
 
     reader.beginObject();
     while (reader.hasNext()) {

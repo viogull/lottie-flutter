@@ -11,7 +11,7 @@ import 'layer.dart';
 
 class ImageLayer extends BaseLayer {
   final Paint paint = Paint();
-  BaseKeyframeAnimation<ColorFilter, ColorFilter> /*?*/ _colorFilterAnimation;
+  BaseKeyframeAnimation<ColorFilter, ColorFilter>? _colorFilterAnimation;
 
   ImageLayer(LottieDrawable lottieDrawable, Layer layerModel)
       : super(lottieDrawable, layerModel);
@@ -51,13 +51,13 @@ class ImageLayer extends BaseLayer {
     return superBounds;
   }
 
-  Image /*?*/ getBitmap() {
+  Image? getBitmap() {
     var refId = layerModel.refId;
     return lottieDrawable.getImageAsset(refId);
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     super.addValueCallback(property, callback);
     if (property == LottieProperty.colorFilter) {
       if (callback == null) {

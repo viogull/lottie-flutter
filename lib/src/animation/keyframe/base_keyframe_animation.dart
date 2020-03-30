@@ -12,9 +12,9 @@ abstract class BaseKeyframeAnimation<K, A> {
 
   final _KeyframesWrapper<K> _keyframesWrapper;
   double _progress = 0;
-  LottieValueCallback<A> /*?*/ valueCallback;
+  LottieValueCallback<A>? valueCallback;
 
-  A /*?*/ _cachedGetValue;
+  A? _cachedGetValue;
 
   double _cachedStartDelayProgress = -1.0;
   double _cachedEndProgress = -1.0;
@@ -125,7 +125,7 @@ abstract class BaseKeyframeAnimation<K, A> {
     _progress = value;
   }
 
-  void setValueCallback(LottieValueCallback<A> /*?*/ valueCallback) {
+  void setValueCallback(LottieValueCallback<A>? valueCallback) {
     if (this.valueCallback != null) {
       this.valueCallback.setAnimation(null);
     }

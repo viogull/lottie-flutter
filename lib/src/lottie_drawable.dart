@@ -11,17 +11,16 @@ import 'value_delegate.dart';
 class LottieDrawable {
   final LottieComposition composition;
   final _matrix = Matrix4.identity();
-  CompositionLayer _compositionLayer;
+  late final _compositionLayer = CompositionLayer(
+      this, LayerParser.parse(composition), composition.layers, composition);
   final Size size;
-  LottieDelegates _delegates;
+  LottieDelegates? _delegates;
   bool _isDirty = true;
 
-  LottieDrawable(this.composition, {LottieDelegates delegates})
+  LottieDrawable(this.composition, {LottieDelegates? delegates})
       : size = Size(composition.bounds.width.toDouble(),
             composition.bounds.height.toDouble()) {
     this.delegates = delegates;
-    _compositionLayer = CompositionLayer(
-        this, LayerParser.parse(composition), composition.layers, composition);
   }
 
   /// Sets whether to apply opacity to the each layer instead of shape.
@@ -49,8 +48,8 @@ class LottieDrawable {
     return _isDirty;
   }
 
-  LottieDelegates get delegates => _delegates;
-  set delegates(LottieDelegates delegates) {
+  LottieDelegates get delegates => _delegates!;
+  set delegates(LottieDelegates? delegates) {
     delegates ??= LottieDelegates();
     if (_delegates != delegates) {
       _delegates = delegates;
@@ -62,7 +61,7 @@ class LottieDrawable {
     return delegates.text == null && composition.characters.isNotEmpty;
   }
 
-  ui.Image getImageAsset(String ref) {
+  ui.Image? getImageAsset(String ref) {
     var imageAsset = composition.images[ref];
     if (imageAsset != null) {
       return imageAsset.loadedImage;
@@ -72,8 +71,7 @@ class LottieDrawable {
   }
 
   TextStyle getTextStyle(String font, String style) {
-    return _delegates
-        .textStyle(LottieFontStyle(fontFamily: font, style: style));
+    return delegates.textStyle(LottieFontStyle(fontFamily: font, style: style));
   }
 
   List<ValueDelegate> _valueDelegates = <ValueDelegate>[];
@@ -119,7 +117,8 @@ class LottieDrawable {
     return keyPaths;
   }
 
-  void draw(ui.Canvas canvas, ui.Rect rect, {BoxFit fit, Alignment alignment}) {
+  void draw(ui.Canvas canvas, ui.Rect rect,
+      {BoxFit? fit, Alignment? alignment}) {
     if (rect.isEmpty) {
       return;
     }
@@ -150,5 +149,5 @@ class LottieDrawable {
 class LottieFontStyle {
   final String fontFamily, style;
 
-  LottieFontStyle({this.fontFamily, this.style});
+  LottieFontStyle({required this.fontFamily, required this.style});
 }

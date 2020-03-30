@@ -5,12 +5,12 @@ import 'load_image.dart';
 abstract class LottieProvider {
   LottieProvider({this.imageProviderFactory});
 
-  final LottieImageProviderFactory imageProviderFactory;
+  final LottieImageProviderFactory? imageProviderFactory;
 
-  ImageProvider getImageProvider(LottieImageAsset lottieImage) {
+  ImageProvider? getImageProvider(LottieImageAsset lottieImage) {
     var imageProvider = fromDataUri(lottieImage.fileName);
     if (imageProvider == null && imageProviderFactory != null) {
-      imageProvider = imageProviderFactory(lottieImage);
+      imageProvider = imageProviderFactory!(lottieImage);
     }
     return imageProvider;
   }

@@ -7,7 +7,7 @@ class Marker {
   final double startFrame;
   final double durationFrames;
 
-  Marker(this.name, {@required this.startFrame, @required this.durationFrames});
+  Marker(this.name, {required this.startFrame, required this.durationFrames});
 
   bool matchesName(String name) {
     if (this.name.toLowerCase() == name.toLowerCase()) {

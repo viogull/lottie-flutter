@@ -2,7 +2,6 @@
 // We don't depend directly on this package to save 2 dependencies
 
 import 'dart:ui';
-import 'package:meta/meta.dart';
 
 /// Creates a new path that is drawn from the segments of `source`.
 ///
@@ -15,14 +14,9 @@ import 'package:meta/meta.dart';
 /// that is an empty path will return an empty path.
 Path dashPath(
   Path source, {
-  @required CircularIntervalList<double> dashArray,
-  DashOffset dashOffset,
+  required CircularIntervalList<double> dashArray,
+  DashOffset? dashOffset,
 }) {
-  assert(dashArray != null);
-  if (source == null) {
-    return null;
-  }
-
   dashOffset = dashOffset ?? const DashOffset.absolute(0.0);
   // TODO: Is there some way to determine how much of a path would be visible today?
 
@@ -55,15 +49,15 @@ class DashOffset {
   ///
   /// `percentage` will be clamped between 0.0 and 1.0; null will be converted
   /// to 0.0.
-  DashOffset.percentage(double percentage)
-      : _rawVal = percentage.clamp(0.0, 1.0) as double ?? 0.0,
+  DashOffset.percentage(double? percentage)
+      : _rawVal = percentage?.clamp(0.0, 1.0) as double ?? 0.0,
         _dashOffsetType = _DashOffsetType.percentage;
 
   /// Create a DashOffset that will be measured in terms of absolute pixels
   /// along the length of a [Path] segment.
   ///
   /// `start` will be coerced to 0.0 if null.
-  const DashOffset.absolute(double start)
+  const DashOffset.absolute(double? start)
       : _rawVal = start ?? 0.0,
         _dashOffsetType = _DashOffsetType.absolute;
 

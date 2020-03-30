@@ -65,8 +65,7 @@ class JsonUtils {
 
   static final JsonReaderOptions _pointNames = JsonReaderOptions.of(['x', 'y']);
 
-  static Offset _jsonObjectToPoint(JsonReader reader,
-      {@required double scale}) {
+  static Offset _jsonObjectToPoint(JsonReader reader, {required double scale}) {
     var x = 0.0;
     var y = 0.0;
     reader.beginObject();

@@ -18,12 +18,12 @@ class FontCharacter {
   final String fontFamily;
 
   FontCharacter(
-      {@required this.shapes,
-      @required this.character,
-      @required this.size,
-      @required this.width,
-      @required this.style,
-      @required this.fontFamily});
+      {required this.shapes,
+      required this.character,
+      required this.size,
+      required this.width,
+      required this.style,
+      required this.fontFamily});
 
   @override
   int get hashCode {

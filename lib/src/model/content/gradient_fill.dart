@@ -18,8 +18,8 @@ class GradientFill implements ContentModel {
   final AnimatableIntegerValue opacity;
   final AnimatablePointValue startPoint;
   final AnimatablePointValue endPoint;
-  final AnimatableDoubleValue /*?*/ highlightLength;
-  final AnimatableDoubleValue /*?*/ highlightAngle;
+  final AnimatableDoubleValue? highlightLength;
+  final AnimatableDoubleValue? highlightAngle;
   final bool hidden;
 
   GradientFill({

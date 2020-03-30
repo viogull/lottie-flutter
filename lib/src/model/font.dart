@@ -7,8 +7,8 @@ class Font {
   final double ascent;
 
   Font(
-      {@required this.family,
-      @required this.name,
-      @required this.style,
-      @required this.ascent});
+      {required this.family,
+      required this.name,
+      required this.style,
+      required this.ascent});
 }

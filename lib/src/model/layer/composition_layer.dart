@@ -14,7 +14,7 @@ import 'layer.dart';
 import 'shape_layer.dart';
 
 class CompositionLayer extends BaseLayer {
-  BaseKeyframeAnimation<double, double> /*?*/ _timeRemapping;
+  BaseKeyframeAnimation<double, double>? _timeRemapping;
   final List<BaseLayer> _layers = <BaseLayer>[];
   final Paint _layerPaint = Paint();
 
@@ -190,7 +190,7 @@ class CompositionLayer extends BaseLayer {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     super.addValueCallback(property, callback);
 
     if (property == LottieProperty.timeRemap) {

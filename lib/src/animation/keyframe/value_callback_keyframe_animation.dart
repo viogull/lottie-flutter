@@ -6,7 +6,7 @@ class ValueCallbackKeyframeAnimation<K, A> extends BaseKeyframeAnimation<K, A> {
   final A valueCallbackValue;
 
   ValueCallbackKeyframeAnimation(LottieValueCallback<A> valueCallback,
-      [A /*?*/ valueCallbackValue])
+      [A? valueCallbackValue])
       : valueCallbackValue = valueCallbackValue,
         super([]) {
     setValueCallback(valueCallback);

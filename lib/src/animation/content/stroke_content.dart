@@ -14,7 +14,7 @@ class StrokeContent extends BaseStrokeContent {
   final String name;
   final bool _hidden;
   final BaseKeyframeAnimation<Color, Color> _colorAnimation;
-  BaseKeyframeAnimation<ColorFilter, ColorFilter> /*?*/ _colorFilterAnimation;
+  BaseKeyframeAnimation<ColorFilter, ColorFilter>? _colorFilterAnimation;
 
   StrokeContent(
       final LottieDrawable lottieDrawable, BaseLayer layer, ShapeStroke stroke)
@@ -46,7 +46,7 @@ class StrokeContent extends BaseStrokeContent {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     super.addValueCallback(property, callback);
     if (property == LottieProperty.strokeColor) {
       _colorAnimation.setValueCallback(callback as LottieValueCallback<Color>);

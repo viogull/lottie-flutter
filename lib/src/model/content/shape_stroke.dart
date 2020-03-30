@@ -38,7 +38,7 @@ ui.StrokeJoin lineJoinTypeToPaintJoin(LineJoinType join) {
 
 class ShapeStroke implements ContentModel {
   final String name;
-  final AnimatableDoubleValue /*?*/ dashOffset;
+  final AnimatableDoubleValue? dashOffset;
   final List<AnimatableDoubleValue> lineDashPattern;
   final AnimatableColorValue color;
   final AnimatableIntegerValue opacity;

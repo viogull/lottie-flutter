@@ -11,7 +11,7 @@ class LottieDelegates {
   /// Specify a callback to dynamically changes the text displayed in the lottie
   /// animation.
   /// For instance, this is useful when you want to translate the text in the animation.
-  final String Function(String) /*?*/ text;
+  final String Function(String)? text;
 
   /// A callback to map between a font family specified in the json animation
   /// with the font family in your assets.

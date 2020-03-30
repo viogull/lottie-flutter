@@ -26,7 +26,7 @@ class FillContent implements DrawingContent, KeyPathElementContent {
   final List<PathContent> _paths = <PathContent>[];
   BaseKeyframeAnimation<Color, Color> _colorAnimation;
   BaseKeyframeAnimation<int, int> _opacityAnimation;
-  BaseKeyframeAnimation<ColorFilter, ColorFilter> /*?*/ _colorFilterAnimation;
+  BaseKeyframeAnimation<ColorFilter, ColorFilter>? _colorFilterAnimation;
   final LottieDrawable lottieDrawable;
 
   FillContent(this.lottieDrawable, this.layer, ShapeFill fill)
@@ -108,7 +108,7 @@ class FillContent implements DrawingContent, KeyPathElementContent {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     if (property == LottieProperty.color) {
       _colorAnimation.setValueCallback(callback as LottieValueCallback<Color>);
     } else if (property == LottieProperty.opacity) {

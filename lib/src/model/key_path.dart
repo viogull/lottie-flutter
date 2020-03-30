@@ -32,7 +32,7 @@ import 'key_path_element.dart';
 /// a {@link KeyPath}. This may be fixed in the future.
 class KeyPath {
   final List<String> keys;
-  KeyPathElement /*?*/ _resolvedElement;
+  KeyPathElement? _resolvedElement;
 
   KeyPath(List<String> keys) : keys = keys.toList();
 
@@ -62,7 +62,7 @@ class KeyPath {
 
   /// Returns a {@link KeyPathElement} that this has been resolved to. KeyPaths get resolved with
   /// resolveKeyPath on LottieDrawable or LottieAnimationView.
-  KeyPathElement /*?*/ get resolvedElement {
+  KeyPathElement? get resolvedElement {
     return _resolvedElement;
   }
 

@@ -28,8 +28,8 @@ class GradientStrokeContent extends BaseStrokeContent {
   final BaseKeyframeAnimation<GradientColor, GradientColor> _colorAnimation;
   final BaseKeyframeAnimation<Offset, Offset> _startPointAnimation;
   final BaseKeyframeAnimation<Offset, Offset> _endPointAnimation;
-  ValueCallbackKeyframeAnimation<List<Color>,
-      List<Color>> /*?*/ _colorCallbackAnimation;
+  ValueCallbackKeyframeAnimation<List<Color>, List<Color>>?
+      _colorCallbackAnimation;
 
   GradientStrokeContent(final LottieDrawable lottieDrawable, BaseLayer layer,
       GradientStroke stroke)
@@ -158,7 +158,7 @@ class GradientStrokeContent extends BaseStrokeContent {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     super.addValueCallback(property, callback);
     if (property == LottieProperty.gradientColor) {
       if (_colorCallbackAnimation != null) {

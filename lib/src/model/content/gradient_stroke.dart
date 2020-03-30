@@ -22,7 +22,7 @@ class GradientStroke implements ContentModel {
   final LineJoinType joinType;
   final double miterLimit;
   final List<AnimatableDoubleValue> lineDashPattern;
-  final AnimatableDoubleValue /*?*/ dashOffset;
+  final AnimatableDoubleValue? dashOffset;
   final bool hidden;
 
   GradientStroke({

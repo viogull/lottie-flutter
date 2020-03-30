@@ -28,7 +28,7 @@ import 'solid_layer.dart';
 import 'text_layer.dart';
 
 abstract class BaseLayer implements DrawingContent, KeyPathElement {
-  static BaseLayer /*?*/ forModel(Layer layerModel, LottieDrawable drawable,
+  static BaseLayer? forModel(Layer layerModel, LottieDrawable drawable,
       LottieComposition composition) {
     switch (layerModel.layerType) {
       case LayerType.shap:
@@ -65,13 +65,13 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
   final LottieDrawable lottieDrawable;
   final Layer layerModel;
 
-  MaskKeyframeAnimation /*?*/ _mask;
+  MaskKeyframeAnimation? _mask;
   DoubleKeyframeAnimation _inOutAnimation;
-  BaseLayer /*?*/ _matteLayer;
+  BaseLayer? _matteLayer;
 
   /// This should only be used by {@link #buildParentLayerListIfNeeded()}
   /// to construct the list of parent layers.
-  BaseLayer /*?*/ _parentLayer;
+  BaseLayer? _parentLayer;
   List<BaseLayer> _parentLayers;
 
   final List<BaseKeyframeAnimation> _animations = <BaseKeyframeAnimation>[];
@@ -104,7 +104,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
     _setupInOutAnimations();
   }
 
-  void setMatteLayer(BaseLayer /*?*/ matteLayer) {
+  void setMatteLayer(BaseLayer? matteLayer) {
     _matteLayer = matteLayer;
   }
 
@@ -112,7 +112,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
     return _matteLayer != null;
   }
 
-  void setParentLayer(BaseLayer /*?*/ parentLayer) {
+  void setParentLayer(BaseLayer? parentLayer) {
     _parentLayer = parentLayer;
   }
 
@@ -134,7 +134,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
     lottieDrawable.invalidateSelf();
   }
 
-  void addAnimation(BaseKeyframeAnimation /*?*/ newAnimation) {
+  void addAnimation(BaseKeyframeAnimation? newAnimation) {
     if (newAnimation == null) {
       return;
     }
@@ -147,7 +147,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
 
   @mustCallSuper
   @override
-  Rect getBounds(Matrix4 parentMatrix, {@required bool applyParents}) {
+  Rect getBounds(Matrix4 parentMatrix, {required bool applyParents}) {
     _buildParentLayerListIfNeeded();
     boundsMatrix.set(parentMatrix);
 
@@ -168,7 +168,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
 
   @override
   void draw(Canvas canvas, Size canvasSize, Matrix4 parentMatrix,
-      {@required int parentAlpha}) {
+      {required int parentAlpha}) {
     L.beginSection(_drawTraceName);
     if (!_visible || layerModel.isHidden) {
       L.endSection(_drawTraceName);
@@ -338,7 +338,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
   }
 
   void drawLayer(Canvas canvas, Size size, Matrix4 parentMatrix,
-      {@required int parentAlpha});
+      {required int parentAlpha});
 
   void _applyMasks(Canvas canvas, Rect bounds, Matrix4 matrix) {
     L.beginSection('Layer#saveLayer');
@@ -590,7 +590,7 @@ abstract class BaseLayer implements DrawingContent, KeyPathElement {
 
   @mustCallSuper
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     transform.applyValueCallback(property, callback);
   }
 }

@@ -29,11 +29,11 @@ class Layer {
   final double startFrame;
   final int preCompWidth;
   final int preCompHeight;
-  final AnimatableTextFrame /*?*/ text;
-  final AnimatableTextProperties /*?*/ textProperties;
+  final AnimatableTextFrame? text;
+  final AnimatableTextProperties? textProperties;
   final List<Keyframe<double>> inOutKeyframes;
   final MatteType matteType;
-  final AnimatableDoubleValue /*?*/ timeRemapping;
+  final AnimatableDoubleValue? timeRemapping;
   final bool isHidden;
 
   double get startProgress {

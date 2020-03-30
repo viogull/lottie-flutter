@@ -21,9 +21,9 @@ class AssetLottie extends LottieProvider {
   String get keyName =>
       package == null ? assetName : 'packages/$package/$assetName';
 
-  final AssetBundle bundle;
+  final AssetBundle? bundle;
 
-  final String package;
+  final String? package;
 
   @override
   Future<LottieComposition> load() async {

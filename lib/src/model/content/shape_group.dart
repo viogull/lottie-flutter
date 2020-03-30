@@ -10,7 +10,7 @@ class ShapeGroup implements ContentModel {
   final List<ContentModel> items;
   final bool hidden;
 
-  ShapeGroup(this.name, this.items, {@required this.hidden});
+  ShapeGroup(this.name, this.items, {required this.hidden});
 
   @override
   Content toContent(LottieDrawable drawable, BaseLayer layer) {

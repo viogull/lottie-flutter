@@ -78,7 +78,7 @@ class AnimatableValueParser {
   }
 
   /// Will return null if the animation can't be played such as if it has expressions.
-  static List<Keyframe<T>> /*?*/ parse<T>(JsonReader reader,
+  static List<Keyframe<T>>? parse<T>(JsonReader reader,
       LottieComposition composition, ValueParser<T> valueParser,
       {double scale}) {
     scale ??= 1.0;

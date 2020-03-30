@@ -66,7 +66,7 @@ class JsonUtf8Reader extends JsonReader {
   /// A peeked string that should be parsed on the next double, long or string.
   /// This is populated before a numeric value is parsed and used if that parsing
   /// fails.
-  String /*?*/ _peekedString;
+  String? _peekedString;
 
   JsonUtf8Reader(this.buffer) {
     if (buffer == null) {

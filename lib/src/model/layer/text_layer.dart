@@ -27,25 +27,25 @@ class TextLayer extends BaseLayer {
   final TextKeyframeAnimation _textAnimation;
   final LottieComposition _composition;
 
-  BaseKeyframeAnimation<Color, Color> /*?*/ _colorAnimation;
+  BaseKeyframeAnimation<Color, Color>? _colorAnimation;
 
-  BaseKeyframeAnimation<Color, Color> /*?*/ _colorCallbackAnimation;
+  BaseKeyframeAnimation<Color, Color>? _colorCallbackAnimation;
 
-  BaseKeyframeAnimation<Color, Color> /*?*/ _strokeColorAnimation;
+  BaseKeyframeAnimation<Color, Color>? _strokeColorAnimation;
 
-  BaseKeyframeAnimation<Color, Color> /*?*/ _strokeColorCallbackAnimation;
+  BaseKeyframeAnimation<Color, Color>? _strokeColorCallbackAnimation;
 
-  BaseKeyframeAnimation<double, double> /*?*/ _strokeWidthAnimation;
+  BaseKeyframeAnimation<double, double>? _strokeWidthAnimation;
 
-  BaseKeyframeAnimation<double, double> /*?*/ _strokeWidthCallbackAnimation;
+  BaseKeyframeAnimation<double, double>? _strokeWidthCallbackAnimation;
 
-  BaseKeyframeAnimation<double, double> /*?*/ _trackingAnimation;
+  BaseKeyframeAnimation<double, double>? _trackingAnimation;
 
-  BaseKeyframeAnimation<double, double> /*?*/ _trackingCallbackAnimation;
+  BaseKeyframeAnimation<double, double>? _trackingCallbackAnimation;
 
-  BaseKeyframeAnimation<double, double> /*?*/ _textSizeAnimation;
+  BaseKeyframeAnimation<double, double>? _textSizeAnimation;
 
-  BaseKeyframeAnimation<double, double> /*?*/ _textSizeCallbackAnimation;
+  BaseKeyframeAnimation<double, double>? _textSizeCallbackAnimation;
 
   TextLayer(LottieDrawable lottieDrawable, Layer layerModel)
       : _composition = layerModel.composition,
@@ -417,7 +417,7 @@ class TextLayer extends BaseLayer {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     super.addValueCallback(property, callback);
     if (property == LottieProperty.color) {
       if (_colorCallbackAnimation != null) {

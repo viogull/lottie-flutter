@@ -32,7 +32,7 @@ class RenderLottie extends RenderBox {
   LottieComposition get composition => _drawable?.composition;
   LottieDrawable _drawable;
   void setComposition(LottieComposition composition,
-      {@required double progress, @required LottieDelegates delegates}) {
+      {required double progress, required LottieDelegates delegates}) {
     var needsLayout = false;
     var needsPaint = false;
     if (composition == null) {

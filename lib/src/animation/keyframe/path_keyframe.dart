@@ -28,7 +28,7 @@ class PathKeyframe extends Keyframe<Offset> {
   }
 
   /// This will be null if the startValue and endValue are the same. */
-  Path /*?*/ getPath() {
+  Path? getPath() {
     return _path;
   }
 }

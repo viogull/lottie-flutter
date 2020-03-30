@@ -16,7 +16,7 @@ class Repeater implements ContentModel {
   Repeater({this.name, this.copies, this.offset, this.transform, this.hidden});
 
   @override
-  Content /*?*/ toContent(LottieDrawable drawable, BaseLayer layer) {
+  Content? toContent(LottieDrawable drawable, BaseLayer layer) {
     return RepeaterContent(drawable, layer, this);
   }
 }

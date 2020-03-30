@@ -34,7 +34,7 @@ typedef LottieFrameBuilder = Widget Function(
 class LottieBuilder extends StatefulWidget {
   const LottieBuilder({
     Key key,
-    @required this.lottie,
+    required this.lottie,
     this.controller,
     this.animate,
     this.reverse,

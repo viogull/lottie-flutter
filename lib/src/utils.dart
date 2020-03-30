@@ -51,7 +51,7 @@ extension Matrix4Extension on Matrix4 {
   /// array
   ///
   /// @param pts The array [x0, y0, x1, y1, ...] of points to transform.
-  void mapPoints(List<double> array, [int offset]) {
+  void mapPoints(List<double> array) {
     for (var i = 0; i < array.length; i += 2) {
       final v = Vector3(array[i], array[i + 1], 0.0)..applyMatrix4(this);
       array[i] = v.storage[0];

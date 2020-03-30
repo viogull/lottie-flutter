@@ -4,7 +4,7 @@ version: 0.3.2
 homepage: https://github.com/xvrh/lottie-flutter
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.8.0-dev.16.0 <3.0.0"
 
 dependencies:
   flutter:

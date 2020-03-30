@@ -32,9 +32,9 @@ class GradientFillContent implements DrawingContent, KeyPathElementContent {
   final BaseKeyframeAnimation<int, int> _opacityAnimation;
   final BaseKeyframeAnimation<Offset, Offset> _startPointAnimation;
   final BaseKeyframeAnimation<Offset, Offset> _endPointAnimation;
-  BaseKeyframeAnimation<ColorFilter, ColorFilter> /*?*/ _colorFilterAnimation;
-  ValueCallbackKeyframeAnimation<List<Color>,
-      List<Color>> /*?*/ _colorCallbackAnimation;
+  BaseKeyframeAnimation<ColorFilter, ColorFilter>? _colorFilterAnimation;
+  ValueCallbackKeyframeAnimation<List<Color>, List<Color>>?
+      _colorCallbackAnimation;
   final LottieDrawable lottieDrawable;
   final int _cacheSteps;
 
@@ -78,7 +78,8 @@ class GradientFillContent implements DrawingContent, KeyPathElementContent {
   }
 
   @override
-  void draw(Canvas canvas, Size size, Matrix4 parentMatrix, {int parentAlpha}) {
+  void draw(Canvas canvas, Size size, Matrix4 parentMatrix,
+      {required int parentAlpha}) {
     if (_fill.hidden) {
       return;
     }
@@ -210,7 +211,7 @@ class GradientFillContent implements DrawingContent, KeyPathElementContent {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     if (property == LottieProperty.opacity) {
       _opacityAnimation.setValueCallback(callback as LottieValueCallback<int>);
     } else if (property == LottieProperty.colorFilter) {

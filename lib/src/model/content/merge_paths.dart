@@ -14,7 +14,7 @@ class MergePaths implements ContentModel {
   MergePaths({this.name, this.mode, this.hidden});
 
   @override
-  Content /*?*/ toContent(LottieDrawable drawable, BaseLayer layer) {
+  Content? toContent(LottieDrawable drawable, BaseLayer layer) {
     return MergePathsContent(this);
   }
 

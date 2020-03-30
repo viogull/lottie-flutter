@@ -30,9 +30,9 @@ class PolystarContent implements PathContent, KeyPathElementContent {
   final BaseKeyframeAnimation<dynamic, double> _pointsAnimation;
   final BaseKeyframeAnimation<dynamic, Offset> _positionAnimation;
   final BaseKeyframeAnimation<dynamic, double> _rotationAnimation;
-  final BaseKeyframeAnimation<dynamic, double> /*?*/ _innerRadiusAnimation;
+  final BaseKeyframeAnimation<dynamic, double>? _innerRadiusAnimation;
   final BaseKeyframeAnimation<dynamic, double> _outerRadiusAnimation;
-  final BaseKeyframeAnimation<dynamic, double> /*?*/ _innerRoundednessAnimation;
+  final BaseKeyframeAnimation<dynamic, double>? _innerRoundednessAnimation;
   final BaseKeyframeAnimation<dynamic, double> _outerRoundednessAnimation;
 
   final _trimPaths = CompoundTrimPathContent();
@@ -296,7 +296,7 @@ class PolystarContent implements PathContent, KeyPathElementContent {
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     if (property == LottieProperty.polystarPoints) {
       _pointsAnimation
           .setValueCallback(callback as LottieValueCallback<double>);

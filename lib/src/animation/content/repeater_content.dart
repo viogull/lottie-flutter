@@ -134,7 +134,7 @@ class RepeaterContent
   }
 
   @override
-  void addValueCallback<T>(T property, LottieValueCallback<T> /*?*/ callback) {
+  void addValueCallback<T>(T property, LottieValueCallback<T>? callback) {
     if (_transform.applyValueCallback(property, callback)) {
       return;
     }
